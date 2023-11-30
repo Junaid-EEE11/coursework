@@ -1,10 +1,10 @@
 import matplotlib.pyplot as plt
-# from kneed import KneeLocator
+from kneed import KneeLocator
 from sklearn.datasets import make_blobs
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 from sklearn.preprocessing import StandardScaler
-!pip install --upgrade kneed
+#!pip install --upgrade kneed
 from kneed import KneeLocator
 
 features, true_labels = make_blobs(
