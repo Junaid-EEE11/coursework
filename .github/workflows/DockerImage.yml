@@ -1,0 +1,32 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: my_registry:${{ github.run_number }}
+
+  save-image:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Save Docker Image as Tarball
+        uses: actions/upload-artifact@v2
+        with:
+          name: myimage
+          path: ./myimage.tar
