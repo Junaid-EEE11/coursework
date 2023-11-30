@@ -38,7 +38,7 @@ plt.show()
 
 
 kl = KneeLocator(range(1, 11), sse, curve="convex", direction="decreasing")
-kl.elbow
+print(kl.elbow)
 
 # A list holds the silhouette coefficients for each k
 silhouette_coefficients = []
