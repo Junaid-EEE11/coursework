@@ -12,6 +12,9 @@ from pandas import read_csv
 
 
 iris = datasets.load_iris()
+df_iris = pd.DataFrame(iris.data, columns = iris.feature_names)
+df_iris['class'] = iris.target
+df_iris.head()
 df_iris.to_csv('iris.csv')
 print(df_iris.shape)
 X = df_iris.drop('class',axis = 1)
