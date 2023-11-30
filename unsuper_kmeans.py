@@ -49,7 +49,7 @@ for k in range(2, 11):
     kmeans.fit(scaled_features)
     score = silhouette_score(scaled_features, kmeans.labels_)
     silhouette_coefficients.append(score)
- silhouette_coefficients
+print(silhouette_coefficients)
 plt.plot(range(2, 11), silhouette_coefficients)
 plt.xticks(range(2, 11))
 plt.xlabel("Number of Clusters")
